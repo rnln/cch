@@ -61,11 +61,10 @@ def main():
 
     commits_number = round_half_away_from_zero(gammavariate(SHAPE, RATE))
 
-    with open(UNIX_TIME_PATH, 'w') as f:
-        for i in range(0, commits_number):
-            f.write(str(time()))
-            f.close()
-            # commit(UNIX_TIME_PATH, COMMENT)
+    for i in range(0, commits_number):
+        with open(UNIX_TIME_PATH, 'w') as f:
+                f.write(str(time()))
+        # commit(UNIX_TIME_PATH, COMMENT)
 
 
 if __name__ == '__main__':
