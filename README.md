@@ -1,12 +1,15 @@
 # :chart_with_upwards_trend: CCh
 
-GitHub contributions statistics cheat. Generates a random number of commits
+![Forks](https://img.shields.io/github/forks/rnln/cch)
+[![License](https://img.shields.io/github/license/rnln/cch)][wtfpl-website]
+
+GitHub contributions cheat. Generates a random number of commits
 following a gamma distribution:
 
 ![PDF plot](./plot.png)
 
-Distribution type and parametrization based on my humble GitHub activity
-statistics research.
+Distribution type and parametrization based on my humble GitHub activity stats
+research.
 
 I did it for the lulz. I know that it's dumb, and that people don't like old
 memes. Just don't bug me and yourself.
@@ -22,7 +25,7 @@ python3 setup.py
 
 Setup module creates a virtual environment in `/path/to/cch/venv/` and a cron
 job to run `cch.py` daily. Job sample:
-```sh
+```
 * * 0 0 0 /home/user/cch/venv/bin/python /home/user/cch/cch.py # CCh
 ```
 

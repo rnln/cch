@@ -5,7 +5,7 @@
 # Do What The Fuck You Want To Public License, Version 2, as published by Sam
 # Hocevar. You may obtain a copy of the license in the COPYING file or at
 # https://github.com/rnln/cch/COPYING
-"""GitHub contributions statistics cheat.
+"""GitHub contributions cheat.
 
 Generates a random number of commits and push them following a gamma
 distribution.
