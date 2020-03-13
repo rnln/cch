@@ -63,7 +63,7 @@ def main():
 
     with open(UNIX_TIME_PATH, 'w') as f:
         for i in range(0, commits_number):
-            f.write(time())
+            f.write(str(time()))
             commit(UNIX_TIME_PATH, COMMENT)
 
 
