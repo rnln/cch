@@ -45,7 +45,7 @@ UNIX_TIME_PATH = get_path('unix-time.txt')
 def commit(path, comment):
     """Commit and push changes in file by path"""
 
-    REPO.index.add(path)
+    REPO.index.add(str(path))
     REPO.index.commit(comment)
     Remote(REPO).push()
 
