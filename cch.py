@@ -29,9 +29,6 @@ MEAN_SHIFT = 0.02195121951
 RATE = (MEAN + MEAN_SHIFT) / SHAPE  # Fix mean value shift caused by rounding
 
 PROJECT_PATH = Path(__file__).resolve().parent
-REPO = Repo(get_path('.git'))
-UNIX_TIME_PATH = get_path('unix-time.txt')
-
 COMMENT = 'Change Unix time'
 
 
@@ -41,10 +38,8 @@ def get_path(*path):
     return PurePath.joinpath(PROJECT_PATH, *list(map(str, path)))
 
 
-def round_half_away_from_zero(number):
-    """Round number half away from zero"""
-
-    return int(Decimal(number).quantize(Decimal(0), rounding=ROUND_HALF_UP))
+REPO = Repo(get_path('.git'))
+UNIX_TIME_PATH = get_path('unix-time.txt')
 
 
 def commit(path, comment):
@@ -53,6 +48,12 @@ def commit(path, comment):
     REPO.index.add(path)
     REPO.index.commit(comment)
     Remote(REPO).push()
+
+
+def round_half_away_from_zero(number):
+    """Round number half away from zero"""
+
+    return int(Decimal(number).quantize(Decimal(0), rounding=ROUND_HALF_UP))
 
 
 def main():
