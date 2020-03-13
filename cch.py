@@ -64,7 +64,8 @@ def main():
     with open(UNIX_TIME_PATH, 'w') as f:
         for i in range(0, commits_number):
             f.write(str(time()))
-            commit(UNIX_TIME_PATH, COMMENT)
+            f.close()
+            # commit(UNIX_TIME_PATH, COMMENT)
 
 
 if __name__ == '__main__':
