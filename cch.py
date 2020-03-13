@@ -47,7 +47,7 @@ def commit(path, comment):
 
     REPO.index.add(str(path))
     REPO.index.commit(comment)
-    Remote(REPO).push()
+    Remote(REPO, 'origin').push()
 
 
 def round_half_away_from_zero(number):
