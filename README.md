@@ -39,4 +39,4 @@ Hocevar. See the [COPYING file](./COPYING) for more details.
 
 [wtfpl-website]: http://wtfpl.net
 [wtfpl-badge]: http://wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-2.png
-[contacts]: https://rilin.me/contacts
+[contacts]: https://romanilin.me/contacts

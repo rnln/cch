@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Copyright © 2020 Roman Ilin <me@rilin.me>.
+# Copyright © 2020 Roman Ilin <me@romanilin.me>.
 # This work is free. You can redistribute and modify it under the terms of the
 # Do What The Fuck You Want To Public License, Version 2, as published by Sam
 # Hocevar. You may obtain a copy of the license in the COPYING file or at
