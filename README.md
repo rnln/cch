@@ -1,12 +1,10 @@
-# :chart_with_upwards_trend: CCh
+# Everyday Commit
 
-![Forks](https://img.shields.io/github/forks/rnln/cch)
-[![License](https://img.shields.io/github/license/rnln/cch)][wtfpl-website]
-
-GitHub contributions cheat. Generates a random number of commits
-following a gamma distribution:
-
-![PDF plot](./plot.png)
+**Everyday Commit** is a Python package that generates a random number of commits following the gamma distribution:
+<figure style="margin-left: 0">
+	<img alt="PDF plot" title="PDF plot" src="./plot.png"><br>
+	<figcaption style="font-size: smaller">Visualisation of the gamma distribution's <abbr title="Probability density function">PDF</abbr> with the shape parameter α = 0.3.</figcaption>
+</figure>
 
 Distribution type and parametrization based on my humble GitHub activity stats
 research.
@@ -18,15 +16,15 @@ memes. Just don't bug me and yourself.
 
 Create a fork and run the setup script:
 ```sh
-git clone git@github.com:rnln/cch.git
-cd cch
+git clone git@github.com:rnln/everyday_commit.git
+cd everyday_commit
 python3 setup.py
 ```
 
-Setup module creates a virtual environment in `/path/to/cch/venv/` and a cron
-job to run `cch.py` daily. Job sample:
+Setup module creates a virtual environment in `/path/to/everyday_commit/venv/` and a cron
+job to run `everyday_commit.py` daily. Job sample:
 ```
-* * 0 0 0 /home/user/cch/venv/bin/python /home/user/cch/cch.py # CCh
+* * 0 0 0 /home/user/everyday_commit/venv/bin/python /home/user/everyday_commit/everyday_commit.py # Everyday Commit
 ```
 
 ## License

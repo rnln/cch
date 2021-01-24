@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Copyright © 2020 Roman Ilin <@romanilin.me>.
+# Copyright © 2020 Roman Ilin <me@rilin.me>.
 # This work is free. You can redistribute and modify it under the terms of the
 # Do What The Fuck You Want To Public License, Version 2, as published by Sam
 # Hocevar. You may obtain a copy of the license in the COPYING file or at
-# https://github.com/rnln/cch/COPYING
-"""GitHub contributions cheat.
+# https://github.com/rnln/everyday_commit/COPYING
+"""Everyday Commit.
 
 Generates a random number of commits and push them following a gamma
 distribution.
@@ -22,24 +22,27 @@ from time import time
 from git import Repo
 from git.remote import Remote
 
+import math
 
-with open('config.json', 'r') as f: MEAN = load(f)['contributionsPerDay']
+
+with open('config.json', 'r') as config_file:
+    MEAN = load(config_file)['contributionsPerDay']
 SHAPE = 0.3
-MEAN_SHIFT = 0.02195121951
+MEAN_SHIFT = 0.02144067294
 RATE = (MEAN + MEAN_SHIFT) / SHAPE  # Fix mean value shift caused by rounding
 
-PROJECT_PATH = Path(__file__).resolve().parent
+PARENT_PATH = Path(__file__).resolve().parent
 COMMENT = 'Change Unix time'
 
 
 def get_path(*path):
-    """Join arguments to full path relative to module parent directory"""
+    """Join arguments and full path to module parent directory"""
 
-    return PurePath.joinpath(PROJECT_PATH, *list(map(str, path)))
+    return PurePath.joinpath(PARENT_PATH, *list(map(str, path)))
 
 
 REPO = Repo(get_path('.git'))
-UNIX_TIME_PATH = get_path('unix-time.txt')
+UNIX_PATH = get_path('unix_time.txt')
 
 
 def commit(path, comment):
@@ -61,10 +64,10 @@ def main():
 
     commits_number = round_half_away_from_zero(gammavariate(SHAPE, RATE))
 
-    for i in range(0, commits_number):
-        with open(UNIX_TIME_PATH, 'w') as f:
-                f.write(str(time()))
-        commit(UNIX_TIME_PATH, COMMENT)
+    for _ in range(0, commits_number):
+        with open(UNIX_PATH, 'w') as unix_file:
+            unix_file.write(str(time()))
+        commit(UNIX_PATH, COMMENT)
 
 
 if __name__ == '__main__':

@@ -14,17 +14,17 @@ import os
 import sys
 
 
-base = os.path.dirname(os.path.abspath(__file__))
+BASE = os.path.dirname(os.path.abspath(__file__))
 
 # prepend bin to PATH (this file is inside the bin directory)
-os.environ['PATH'] = os.pathsep.join([base] + os.environ['PATH'].split(os.pathsep))
-os.environ['VIRTUAL_ENV'] = base  # virtual env is right above bin directory
+os.environ['PATH'] = os.pathsep.join([BASE] + os.environ['PATH'].split(os.pathsep))
+os.environ['VIRTUAL_ENV'] = BASE  # virtual env is right above bin directory
 
 # add the virtual environments libraries to the host python import mechanism
-sys.path.append(os.fspath(list(Path(base).parent.rglob('site-packages'))[0]))
+sys.path.append(os.fspath(list(Path(BASE).parent.rglob('site-packages'))[0]))
 
 sys.real_prefix = sys.prefix
-sys.prefix = base
+sys.prefix = BASE
 sys.executable = os.path.join(sys.prefix, 'python')
 
 print(sys.real_prefix)
